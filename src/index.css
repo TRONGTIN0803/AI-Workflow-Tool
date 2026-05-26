@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  color: #e4e4e7;
+  background: #08090e;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  --surface: rgba(255, 255, 255, 0.035);
+  --stroke: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bg-app {
+  position: relative;
+  background:
+    radial-gradient(circle at 52% -12%, rgba(124, 58, 237, 0.18), transparent 34%),
+    radial-gradient(circle at 95% 16%, rgba(34, 211, 238, 0.08), transparent 22%),
+    #08090e;
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.024));
+  backdrop-filter: blur(16px);
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.11) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.orb {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 999px;
+  background: rgba(109, 40, 217, 0.2);
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.42);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme="light"] .bg-app {
+  background:
+    radial-gradient(circle at 50% -15%, rgba(124, 58, 237, 0.12), transparent 32%),
+    #f4f4f7;
+}
+
+html[data-theme="light"] .glass {
+  background: rgba(16, 17, 24, 0.94);
+}
+
+@media (max-width: 640px) {
+  .orb {
+    width: 280px;
+    height: 280px;
+  }
+}
